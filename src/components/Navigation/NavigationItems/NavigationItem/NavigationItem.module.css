@@ -1,0 +1,23 @@
+.NavigationItem {
+  display: flex;
+  background-color: #6983aa;
+  width: 100%;
+  justify-content: center;
+}
+
+.NavigationItem a {
+  font-size: large;
+  color: #eee;
+  height: 100%;
+  width: 100%;
+  padding: 16px 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 350ms ease-in-out;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+  background-color: #719dbb;
+}
