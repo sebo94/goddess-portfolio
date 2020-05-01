@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import classes from "./Projects.module.css";
 import { Link } from "react-router-dom";
 import aos from "aos";
+import { motion } from "framer-motion";
+
 function importAll(r) {
   let images = {};
   r.keys().map((item, index) => {
@@ -19,13 +21,23 @@ class Projects extends Component {
     aos.init();
   }
   render() {
+    const pageTransition = {
+      in: { opacity: 1, scale: 1, y: 0 },
+      out: { opacity: 0, scale: 0.5, y: "-100%" },
+    };
     return (
-      <div className={classes.Projects}>
+      <motion.div
+        className={classes.Projects}
+        animate="in"
+        initial="out"
+        variants={pageTransition}
+      >
         <h1>These are my projects</h1>
-
         <div className={classes.ProjectsContainer}>
           <ul className={classes.Categories}>
-            <li className={[classes.Category, classes.ActiveCategory].join(" ")}>
+            <li
+              className={[classes.Category, classes.ActiveCategory].join(" ")}
+            >
               <p>All</p>
             </li>
             <li className={classes.Category}>
@@ -124,7 +136,7 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
 }
