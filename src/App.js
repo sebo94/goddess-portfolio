@@ -9,7 +9,6 @@ import Project from "./containers/Projects/Project/Project";
 
 class App extends Component {
   render() {
-    console.log(this.props.location.pathname);
     return (
       <Layout>
         <AnimatePresence exitBeforeEnter>
