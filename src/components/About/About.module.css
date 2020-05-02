@@ -1,0 +1,80 @@
+.About {
+  display: flex;
+  padding: 50px 30px;
+  box-sizing: border-box;
+}
+
+.Column {
+  flex: 0 0 50%;
+}
+
+.Content {
+  padding: 50px 0;
+  position: relative;
+}
+
+.ContentBox {
+  position: relative;
+  z-index: 10;
+  margin-right: -75px;
+  padding: 15px;
+}
+
+.ContentBoxInner {
+  padding: 25px 20px 25px 15px;
+  background-color: white;
+}
+
+.Title {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+.Description {
+  font-size: 16px;
+  margin: 0 0 15;
+  line-height: 2.1;
+  font-weight: 300;
+  color: #6b6b74;
+  padding-bottom: 50px;
+}
+
+.Counters {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.CounterBox {
+  flex: 0 0 33.3%;
+  margin: 25px 0;
+  position: relative;
+}
+
+.CounterBox::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -15px;
+  width: 40px;
+  height: 1px;
+  background-color: red;
+}
+
+.Counter {
+  font-size: 36px;
+  color: #99896e;
+  padding: 0 3px;
+}
+
+.CounterTitle {
+  margin: 0;
+  font-weight: 500;
+}
+
+.Image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
