@@ -6,7 +6,7 @@ class Layout extends Component {
   render() {
     return (
       <div className={classes.Layout}>
-        <Toolbar />
+        <Toolbar active={this.props.inView}/>
         <main className={classes.Content}>{this.props.children}</main>
       </div>
     );

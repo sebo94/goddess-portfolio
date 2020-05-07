@@ -1,23 +1,16 @@
 .NavigationItem {
-  display: flex;
-  background-color: #6983aa;
-  width: 100%;
-  justify-content: center;
+  align-self: center;
+  text-align: center;
 }
 
 .NavigationItem a {
   font-size: 15px;
   color: #eee;
-  height: 100%;
-  width: 100%;
-  padding: 14px 10px;
   text-decoration: none;
-  text-align: center;
-  transition: background-color 500ms ease-in-out;
 }
 
 .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active {
-  background-color: #719dbb;
+  text-decoration: underline;
 }

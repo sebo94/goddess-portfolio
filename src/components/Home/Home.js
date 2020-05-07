@@ -6,7 +6,7 @@ const home = (props) => {
   return (
     <div className={classes.Home}>
       <h1>Some title here</h1>
-      <img alt="car" src={imgSource} />
+      <img alt="" src={imgSource} />
     </div>
   );
 };
