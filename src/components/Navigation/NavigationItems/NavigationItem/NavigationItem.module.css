@@ -3,14 +3,23 @@
   text-align: center;
 }
 
-.NavigationItem a {
+/* .NavigationItem a {
   font-size: 15px;
   color: #eee;
   text-decoration: none;
-}
+} */
 
-.NavigationItem a:hover,
+/* .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active {
   text-decoration: underline;
+} */
+
+.TestLink {
+  color: #333;
+  text-decoration: none;
+}
+
+.TestActive {
+  color: #eee;
 }
