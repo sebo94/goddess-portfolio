@@ -8,19 +8,17 @@ const navigationItems = (props) => {
     <ul className={classes.NavigationItems}>
       {links.map((link) => {
         let active = false;
-        if(props.active === link ) {
+        if (props.active === link) {
           active = true;
         }
         const path = link === "home" ? "/" : link;
         const exact = link === "home" ? true : false;
-        return <NavigationItem link={path} exact={exact} active={active}>{link}</NavigationItem>;
+        return (
+          <NavigationItem link={path} exact={exact} active={active}>
+            {link}
+          </NavigationItem>
+        );
       })}
-      {/* <NavigationItem link="/" exact>
-        home
-      </NavigationItem>
-      <NavigationItem link="/projects">projects</NavigationItem>
-      <NavigationItem link="/shop">shop</NavigationItem>
-      <NavigationItem link="/about">about</NavigationItem> */}
     </ul>
   );
 };

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import classes from "./Projects.module.css";
-import { Link } from "react-router-dom";
 import aos from "aos";
 
 function importAll(r) {
@@ -48,13 +47,13 @@ class Projects extends Component {
               data-aos="fade-right"
               data-aos-delay="300"
             >
-              <Link to="/projects/1">
+              <a href="www.google.com">
                 <img
                   className={classes.ProjectImage}
                   src={images["project1.png"]}
                   alt=""
                 />
-              </Link>
+              </a>
             </div>
 
             <div
@@ -62,13 +61,13 @@ class Projects extends Component {
               data-aos="zoom-in"
               data-aos-delay="600"
             >
-              <Link to="/projects/1">
+              <a href="www.google.com">
                 <img
                   className={classes.ProjectImage}
                   src={images["project2.jpg"]}
                   alt=""
                 />
-              </Link>
+              </a>
             </div>
 
             <div
@@ -76,13 +75,13 @@ class Projects extends Component {
               data-aos="fade-left"
               data-aos-delay="900"
             >
-              <Link to="/projects/1">
+              <a href="www.google.com">
                 <img
                   className={classes.ProjectImage}
                   src={images["project3.jpg"]}
                   alt=""
                 />
-              </Link>
+              </a>
             </div>
 
             <div
@@ -90,13 +89,13 @@ class Projects extends Component {
               data-aos="fade-right"
               data-aos-delay="1200"
             >
-              <Link to="/projects/1">
+              <a href="www.google.com">
                 <img
                   className={classes.ProjectImage}
                   src={images["project4.jpg"]}
                   alt=""
                 />
-              </Link>
+              </a>
             </div>
 
             <div
@@ -104,13 +103,13 @@ class Projects extends Component {
               data-aos="zoom-in"
               data-aos-delay="1500"
             >
-              <Link to="/projects/1">
+              <a href="www.google.com">
                 <img
                   className={classes.ProjectImage}
                   src={images["project5.jpg"]}
                   alt=""
                 />
-              </Link>
+              </a>
             </div>
 
             <div
@@ -118,13 +117,13 @@ class Projects extends Component {
               data-aos="fade-left"
               data-aos-delay="1800"
             >
-              <Link to="/projects/1">
+              <a href="www.google.com">
                 <img
                   className={classes.ProjectImage}
                   src={images["project6.jpg"]}
                   alt=""
                 />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

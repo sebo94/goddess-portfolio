@@ -6,12 +6,12 @@ class TrackVisibility extends Component {
   async componentDidMount() {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.intersectionRatio === 1) {
+        if (entry.intersectionRatio >= 0.5) {
           // Item is fully visible
           this.props.onVisible();
         }
       },
-      { root: null, rootMargin: "0px", threshold: 1 }
+      { root: null, rootMargin: "0px", threshold: .8 }
     );
     if (this.ref.current) {
       observer.observe(this.ref.current);
