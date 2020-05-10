@@ -1,15 +1,21 @@
 import React from "react";
 import classes from "./NavigationItem.module.css";
+import { Link } from "react-scroll";
 
 const navigationItem = (props) => {
-  const testLinkClass = props.active
-    ? [classes.TestLink, classes.TestActive].join(" ")
-    : [classes.TestLink];
   return (
     <li className={classes.NavigationItem}>
-      <a className={testLinkClass} href="www.google.com">
+      <Link
+        className={classes.Link}
+        activeClass={classes.Active}
+        to={props.children}
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
         {props.children}
-      </a>
+      </Link>
     </li>
   );
 };

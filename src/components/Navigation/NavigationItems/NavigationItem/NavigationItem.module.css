@@ -3,12 +3,12 @@
   text-align: center;
 }
 
-.TestLink {
-  color: #333;
-  text-decoration: none;
+.Link {
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.TestActive {
-  color: rgb(128, 126, 241);
-  text-decoration: underline;
+.Active {
+  color: #948a72;
+  transition: color 50ms ease;
 }

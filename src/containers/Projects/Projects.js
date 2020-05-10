@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import classes from "./Projects.module.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Colcade from "colcade";
 
 function importAll(r) {
   let images = {};
@@ -16,33 +17,145 @@ const images = importAll(
 );
 
 class Projects extends Component {
+  state = {
+    grid: null,
+    colc: null,
+  };
   componentDidMount() {
     Aos.init();
+    this.setState({ grid: document.querySelector(`.${classes.Grid}`) }, () => {
+      console.log(`.${classes.GridColumn}`, `.${classes.GridItem}`);
+      const colc = new Colcade(this.state.grid, {
+        columns: `.${classes.GridColumn}`,
+        items: `.${classes.GridItem}`,
+      });
+      this.setState({ colc });
+    });
   }
   render() {
     return (
-      <div
-        className={classes.Projects}
-      >
-        <h1>These are my projects</h1>
-        <div className={classes.ProjectsContainer}>
-          <ul className={classes.Categories}>
-            <li
-              className={[classes.Category, classes.ActiveCategory].join(" ")}
-            >
-              <p>All</p>
-            </li>
-            <li className={classes.Category}>
-              <p>Watercolor</p>
-            </li>
-            <li className={classes.Category}>
-              <p>Acrylics</p>
-            </li>
-            <li className={classes.Category}>
-              <p>Oils</p>
-            </li>
-          </ul>
+      <section id="projects" className={classes.Projects}>
+        <div
+          className={classes.Container}
+          data-aos="fade-right"
+          data-aos-delay="200"
+          data-aos-duration="500"
+          data-aos-easing="ease-in"
+        >
+          <h1 className={classes.Title}>Projects</h1>
           <div className={classes.Grid}>
+            <div
+              className={[classes.GridColumn, classes.GridColumn1].join(" ")}
+            ></div>
+            <div
+              className={[classes.GridColumn, classes.GridColumn2].join(" ")}
+            ></div>
+            <div
+              className={[classes.GridColumn, classes.GridColumn3].join(" ")}
+            ></div>
+            <div
+              className={[classes.GridColumn, classes.GridColumn4].join(" ")}
+            ></div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+            <div className={classes.GridItem}>
+              <img
+                className={classes.ProjectImage}
+                src={images["project1.png"]}
+                alt=""
+              />
+            </div>
+          </div>
+          {/* <div className={classes.Grid}>
             <div
               className={classes.Project}
               data-aos="fade-right"
@@ -126,9 +239,9 @@ class Projects extends Component {
                 />
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
-      </div>
+      </section>
     );
   }
 }

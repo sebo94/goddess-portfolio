@@ -2,8 +2,18 @@ import React from "react";
 import classes from "./About.module.css";
 import imgSrc from "../../assets/images/projects/project2.jpg";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const about = (props) => (
-  <div className={classes.About}>
+  <section
+    id="about"
+    className={classes.About}
+    data-aos="fade-left"
+    data-aos-delay="200"
+    data-aos-duration="500"
+    data-aos-easing="ease-in"
+  >
     <div className={[classes.Column, classes.Content].join(" ")}>
       <div className={classes.ContentBox}>
         <div className={classes.ContentBoxInner}>
@@ -39,7 +49,7 @@ const about = (props) => (
       style={{ backgroundImage: `url(${imgSrc})` }}
       className={[classes.Column, classes.Image].join(" ")}
     ></div>
-  </div>
+  </section>
 );
 
 export default about;

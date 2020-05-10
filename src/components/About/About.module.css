@@ -1,6 +1,8 @@
 .About {
+  max-width: 1170px;
+  padding: 120px 15px;
+  margin: 0 auto;
   display: flex;
-  padding: 50px 30px;
   box-sizing: border-box;
 }
 

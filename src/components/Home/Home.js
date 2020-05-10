@@ -1,6 +1,8 @@
 import React from "react";
-import classes from "./Home.module.css";
 import { Parallax } from "react-parallax";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function importAll(r) {
   let images = {};
@@ -16,11 +18,21 @@ const images = importAll(
 
 const home = (props) => {
   return (
-    <div className={classes.Home}>
-      <Parallax bgImage={images["home-1.jpeg"]} bgImageStyle={{top: '-200px'}} strength={500}>
+    <section
+      id="home"
+      data-aos="fade"
+      data-aos-delay="200"
+      data-aos-duration="300"
+      data-aos-easing="ease-in"
+    >
+      <Parallax
+        bgImage={images["home-1.jpeg"]}
+        bgImageStyle={{ top: "-200px" }}
+        strength={500}
+      >
         <div style={{ height: "100vh" }}></div>
       </Parallax>
-    </div>
+    </section>
   );
 };
 

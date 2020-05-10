@@ -1,10 +1,3 @@
-# Optimizations 
-
-1. Change libraries to smaller ones based on needs (parallax, infinite carousel, aos)
-2. Image optimizations (quality, sizes, metatags, cdns) 
-3. Check the link below to se reacts built in optimization tools
-4. Lazy loading components
-
 ## Available Scripts
 
 In the project directory, you can run:

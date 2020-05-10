@@ -3,14 +3,21 @@ import classes from "./Toolbar.module.css";
 import Logo from "../../Logo/Logo";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const toolbar = (props) => {
-  console.log(props.disappear);
-  const hide = props.disappear ? { display: "none" } : {}
   return (
-    <header className={classes.Toolbar} style={hide}>
+    <header
+      data-aos="fade"
+      data-aos-delay="200"
+      data-aos-duration="500"
+      data-aos-easing="ease-in"
+      className={classes.Toolbar}
+    >
       <Logo />
       <nav>
-        <NavigationItems active={props.active} />
+        <NavigationItems />
       </nav>
     </header>
   );
