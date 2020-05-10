@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classes from "./Projects.module.css";
-import aos from "aos";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function importAll(r) {
   let images = {};
@@ -16,7 +17,7 @@ const images = importAll(
 
 class Projects extends Component {
   componentDidMount() {
-    aos.init();
+    Aos.init();
   }
   render() {
     return (
