@@ -18,3 +18,10 @@
 4. Share my projects on socials
 5. Navbar animation 
 6. Find a way to track who's sharing the projects
+
+## Layout inspirations
+1. https://colorlib.com/preview/#niko
+2. https://colorlib.com/preview/#oneder
+3. https://colorlib.com/demo?theme=glint
+4. https://colorlib.com/preview/#ronin
+5. https://colorlib.com/preview/#alime

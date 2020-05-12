@@ -1,24 +1,32 @@
-import React from "react";
-import classes from "./Project.module.css";
+import React, { Component } from "react";
+import "./Project.css";
 
-const Project = (props) => (
-  <div className={classes.Project}>
-    <h1>I am a single project</h1>
-    <img
-      className={classes.ProjectImage}
-      src="https://source.unsplash.com/200x200"
-      alt=""
-    />
-    <p className={classes.ProjectDescription}>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum."
-    </p>
-  </div>
-);
+function shallowCompare(newObj, prevObj) {
+  for (let key in newObj) {
+    if (newObj[key] !== prevObj[key]) return true;
+  }
+  return false;
+}
+
+class Project extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return !shallowCompare(this.props === nextProps);
+  }
+  render() {
+    const primaryClass = this.props.element.normal ? "element-item1" : ""; 
+    return (
+      <div
+        id={this.props.element.name}
+        className={`element-item ${primaryClass} ${this.props.element.category}`}
+        data-category={this.props.element.category}
+      >
+        <h3 className="name">{this.props.element.name}</h3>
+        <p className="symbol">{this.props.element.symbol}</p>
+        <p className="number">{this.props.element.number}</p>
+        <p className="weight">{this.props.element.weight}</p>
+      </div>
+    );
+  }
+}
 
 export default Project;

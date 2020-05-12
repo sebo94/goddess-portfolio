@@ -18,26 +18,3 @@
   margin-top: 0;
   margin-bottom: 50px;
 }
-
-.Grid {
-  display: flex;
-}
-
-.GridColumn {
-  flex: 1;
-}
-
-.GridItem {}
-
-.Project {
-  overflow: hidden;
-}
-
-.ProjectImage {
-  width: 100%;
-  transition: transform 1000ms ease;
-}
-
-.ProjectImage:hover {
-  transform: scale(1.2);
-}

@@ -1,8 +1,17 @@
 import React, { Component } from "react";
-import classes from "./Projects.module.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Colcade from "colcade";
+import Project from "./Project/Project";
+import IsotopeResponseRenderer from "./IsotopeResponseRenderer/IsotopeResponseRenderer";
+import "./Project/Project.css";
+
+
+function shallowCompare(newObj, prevObj) {
+  for (let key in newObj) {
+    if (newObj[key] !== prevObj[key]) return true;
+  }
+  return false;
+}
 
 function importAll(r) {
   let images = {};
@@ -16,232 +25,178 @@ const images = importAll(
   require.context("../../assets/images/projects", false, /\.(png|jpe?g|svg)$/)
 );
 
+const myElements = [
+  {
+    name: "Mercury",
+    symbol: "Hg",
+    number: 80,
+    weight: 200.59,
+    category: "transition",
+    normal: true
+  },
+  {
+    name: "Tellurium",
+    symbol: "Te",
+    number: 52,
+    weight: 127.6,
+    category: "metalloid",
+    normal: false
+  },
+  {
+    name: "Bismuth",
+    symbol: "Bi",
+    number: 83,
+    weight: 28.98,
+    category: "metal",
+    normal: true
+  },
+  {
+    name: "Mercury",
+    symbol: "Hg",
+    number: 80,
+    weight: 200.59,
+    category: "transition",
+    normal: false
+  },
+  {
+    name: "Tellurium",
+    symbol: "Te",
+    number: 52,
+    weight: 127.6,
+    category: "metalloid",
+    normal: true
+  },
+  {
+    name: "Bismuth",
+    symbol: "Bi",
+    number: 83,
+    weight: 28.98,
+    category: "metal",
+    normal: false
+  },
+  {
+    name: "Mercury",
+    symbol: "Hg",
+    number: 80,
+    weight: 200.59,
+    category: "transition",
+    normal: true
+  },
+  {
+    name: "Tellurium",
+    symbol: "Te",
+    number: 52,
+    weight: 127.6,
+    category: "metalloid",
+    normal: false
+  },
+  {
+    name: "Bismuth",
+    symbol: "Bi",
+    number: 83,
+    weight: 28.98,
+    category: "metal",
+    normal: true
+  },
+  {
+    name: "Mercury",
+    symbol: "Hg",
+    number: 80,
+    weight: 200.59,
+    category: "transition",
+    normal: false
+  },
+  {
+    name: "Tellurium",
+    symbol: "Te",
+    number: 52,
+    weight: 127.6,
+    category: "metalloid",
+    normal: true
+  },
+  {
+    name: "Bismuth",
+    symbol: "Bi",
+    number: 83,
+    weight: 28.98,
+    category: "metal",
+    normal: false
+  },
+  {
+    name: "Mercury",
+    symbol: "Hg",
+    number: 80,
+    weight: 200.59,
+    category: "transition",
+    normal: true
+  },
+  {
+    name: "Tellurium",
+    symbol: "Te",
+    number: 52,
+    weight: 127.6,
+    category: "metalloid",
+    normal: false
+  },
+  {
+    name: "Bismuth",
+    symbol: "Bi",
+    number: 83,
+    weight: 28.98,
+    category: "metal",
+    normal: true
+  },
+];
+
+// Define data to drive the UI and Isotope.  This could/should be placed in a separate module.
+const filterData = [
+  { name: "show all", value: "*" },
+  { name: "metal", value: ".metal" },
+  { name: "transition", value: ".transition" },
+  { name: "alkali and alkaline-earth", value: ".alkali, .alkaline-earth" },
+  { name: "not transition", value: ":not(.transition)" },
+  { name: "metal but not transition", value: ".metal:not(.transition)" },
+  { name: "number > 50", value: "numberGreaterThan50" },
+  { name: "name ends with -ium", value: "ium" },
+];
+
 class Projects extends Component {
   state = {
-    grid: null,
-    colc: null,
+    filter: "",
+    elements: [],
   };
   componentDidMount() {
     Aos.init();
-    this.setState({ grid: document.querySelector(`.${classes.Grid}`) }, () => {
-      console.log(`.${classes.GridColumn}`, `.${classes.GridItem}`);
-      const colc = new Colcade(this.state.grid, {
-        columns: `.${classes.GridColumn}`,
-        items: `.${classes.GridItem}`,
-      });
-      this.setState({ colc });
-    });
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      !shallowCompare(this.props, nextProps) ||
+      !shallowCompare(this.state, nextState)
+    );
+  }
+  renderElements(elements) {
+    return elements.map((e) => <Project key={e.name} element={e}></Project>);
+  }
+
+  handleFiltering = (type) => {
+    this.setState({ filter: type });
+  };
+
   render() {
     return (
-      <section id="projects" className={classes.Projects}>
-        <div
-          className={classes.Container}
-          data-aos="fade-right"
-          data-aos-delay="200"
-          data-aos-duration="500"
-          data-aos-easing="ease-in"
-        >
-          <h1 className={classes.Title}>Projects</h1>
-          <div className={classes.Grid}>
-            <div
-              className={[classes.GridColumn, classes.GridColumn1].join(" ")}
-            ></div>
-            <div
-              className={[classes.GridColumn, classes.GridColumn2].join(" ")}
-            ></div>
-            <div
-              className={[classes.GridColumn, classes.GridColumn3].join(" ")}
-            ></div>
-            <div
-              className={[classes.GridColumn, classes.GridColumn4].join(" ")}
-            ></div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-            <div className={classes.GridItem}>
-              <img
-                className={classes.ProjectImage}
-                src={images["project1.png"]}
-                alt=""
-              />
-            </div>
-          </div>
-          {/* <div className={classes.Grid}>
-            <div
-              className={classes.Project}
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
-              <a href="www.google.com">
-                <img
-                  className={classes.ProjectImage}
-                  src={images["project1.png"]}
-                  alt=""
-                />
-              </a>
-            </div>
+      <div>
+        <h3>Filter All</h3>
+        <button onClick={() => this.handleFiltering("*")}>Filter All</button>
 
-            <div
-              className={classes.Project}
-              data-aos="zoom-in"
-              data-aos-delay="600"
-            >
-              <a href="www.google.com">
-                <img
-                  className={classes.ProjectImage}
-                  src={images["project2.jpg"]}
-                  alt=""
-                />
-              </a>
-            </div>
+        <h3>Filter Metal</h3>
+        <button onClick={() => this.handleFiltering(".metal")}>
+          Filter Metal
+        </button>
 
-            <div
-              className={classes.Project}
-              data-aos="fade-left"
-              data-aos-delay="900"
-            >
-              <a href="www.google.com">
-                <img
-                  className={classes.ProjectImage}
-                  src={images["project3.jpg"]}
-                  alt=""
-                />
-              </a>
-            </div>
-
-            <div
-              className={classes.Project}
-              data-aos="fade-right"
-              data-aos-delay="1200"
-            >
-              <a href="www.google.com">
-                <img
-                  className={classes.ProjectImage}
-                  src={images["project4.jpg"]}
-                  alt=""
-                />
-              </a>
-            </div>
-
-            <div
-              className={classes.Project}
-              data-aos="zoom-in"
-              data-aos-delay="1500"
-            >
-              <a href="www.google.com">
-                <img
-                  className={classes.ProjectImage}
-                  src={images["project5.jpg"]}
-                  alt=""
-                />
-              </a>
-            </div>
-
-            <div
-              className={classes.Project}
-              data-aos="fade-left"
-              data-aos-delay="1800"
-            >
-              <a href="www.google.com">
-                <img
-                  className={classes.ProjectImage}
-                  src={images["project6.jpg"]}
-                  alt=""
-                />
-              </a>
-            </div>
-          </div> */}
-        </div>
-      </section>
+        <IsotopeResponseRenderer filter={this.state.filter}>
+          {this.renderElements(myElements)}
+        </IsotopeResponseRenderer>
+      </div>
     );
   }
 }
