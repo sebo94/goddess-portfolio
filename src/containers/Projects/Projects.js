@@ -5,7 +5,6 @@ import Project from "./Project/Project";
 import IsotopeResponseRenderer from "./IsotopeResponseRenderer/IsotopeResponseRenderer";
 import "./Project/Project.css";
 
-
 function shallowCompare(newObj, prevObj) {
   for (let key in newObj) {
     if (newObj[key] !== prevObj[key]) return true;
@@ -27,143 +26,52 @@ const images = importAll(
 
 const myElements = [
   {
-    name: "Mercury",
-    symbol: "Hg",
-    number: 80,
-    weight: 200.59,
-    category: "transition",
-    normal: true
+    source: `${images["project1.png"]}`,
+    alt: "alt1",
+    href: "https://www.google.com",
+    category: "installations",
+    height: "xl",
   },
   {
-    name: "Tellurium",
-    symbol: "Te",
-    number: 52,
-    weight: 127.6,
-    category: "metalloid",
-    normal: false
+    source: `${images["project2.jpg"]}`,
+    alt: "alt2",
+    href: "https://www.google.com",
+    category: "painting",
+    height: "xs",
   },
   {
-    name: "Bismuth",
-    symbol: "Bi",
-    number: 83,
-    weight: 28.98,
-    category: "metal",
-    normal: true
+    source: `${images["project3.jpg"]}`,
+    alt: "alt3",
+    href: "https://www.google.com",
+    category: "illustration",
+    height: "s",
   },
   {
-    name: "Mercury",
-    symbol: "Hg",
-    number: 80,
-    weight: 200.59,
-    category: "transition",
-    normal: false
+    source: `${images["project4.jpg"]}`,
+    alt: "alt4",
+    href: "https://www.google.com",
+    category: "painting",
+    height: "m",
   },
   {
-    name: "Tellurium",
-    symbol: "Te",
-    number: 52,
-    weight: 127.6,
-    category: "metalloid",
-    normal: true
+    source: `${images["project5.jpg"]}`,
+    alt: "alt5",
+    href: "https://www.google.com",
+    category: "illustration",
+    height: "l",
   },
   {
-    name: "Bismuth",
-    symbol: "Bi",
-    number: 83,
-    weight: 28.98,
-    category: "metal",
-    normal: false
+    source: `${images["project6.jpg"]}`,
+    alt: "alt6",
+    href: "https://www.google.com",
+    category: "installation",
+    height: "xs",
   },
-  {
-    name: "Mercury",
-    symbol: "Hg",
-    number: 80,
-    weight: 200.59,
-    category: "transition",
-    normal: true
-  },
-  {
-    name: "Tellurium",
-    symbol: "Te",
-    number: 52,
-    weight: 127.6,
-    category: "metalloid",
-    normal: false
-  },
-  {
-    name: "Bismuth",
-    symbol: "Bi",
-    number: 83,
-    weight: 28.98,
-    category: "metal",
-    normal: true
-  },
-  {
-    name: "Mercury",
-    symbol: "Hg",
-    number: 80,
-    weight: 200.59,
-    category: "transition",
-    normal: false
-  },
-  {
-    name: "Tellurium",
-    symbol: "Te",
-    number: 52,
-    weight: 127.6,
-    category: "metalloid",
-    normal: true
-  },
-  {
-    name: "Bismuth",
-    symbol: "Bi",
-    number: 83,
-    weight: 28.98,
-    category: "metal",
-    normal: false
-  },
-  {
-    name: "Mercury",
-    symbol: "Hg",
-    number: 80,
-    weight: 200.59,
-    category: "transition",
-    normal: true
-  },
-  {
-    name: "Tellurium",
-    symbol: "Te",
-    number: 52,
-    weight: 127.6,
-    category: "metalloid",
-    normal: false
-  },
-  {
-    name: "Bismuth",
-    symbol: "Bi",
-    number: 83,
-    weight: 28.98,
-    category: "metal",
-    normal: true
-  },
-];
-
-// Define data to drive the UI and Isotope.  This could/should be placed in a separate module.
-const filterData = [
-  { name: "show all", value: "*" },
-  { name: "metal", value: ".metal" },
-  { name: "transition", value: ".transition" },
-  { name: "alkali and alkaline-earth", value: ".alkali, .alkaline-earth" },
-  { name: "not transition", value: ":not(.transition)" },
-  { name: "metal but not transition", value: ".metal:not(.transition)" },
-  { name: "number > 50", value: "numberGreaterThan50" },
-  { name: "name ends with -ium", value: "ium" },
 ];
 
 class Projects extends Component {
   state = {
     filter: "",
-    elements: [],
   };
   componentDidMount() {
     Aos.init();
@@ -174,8 +82,9 @@ class Projects extends Component {
       !shallowCompare(this.state, nextState)
     );
   }
+  // You could do a method like this for every map render
   renderElements(elements) {
-    return elements.map((e) => <Project key={e.name} element={e}></Project>);
+    return elements.map((e) => <Project key={e.alt} element={e}></Project>);
   }
 
   handleFiltering = (type) => {
@@ -186,11 +95,11 @@ class Projects extends Component {
     return (
       <div>
         <h3>Filter All</h3>
-        <button onClick={() => this.handleFiltering("*")}>Filter All</button>
+        <button onClick={() => this.handleFiltering("*")}>Filter</button>
 
-        <h3>Filter Metal</h3>
-        <button onClick={() => this.handleFiltering(".metal")}>
-          Filter Metal
+        <h3>Filter Illustrations</h3>
+        <button onClick={() => this.handleFiltering(".illustration")}>
+          Filter
         </button>
 
         <IsotopeResponseRenderer filter={this.state.filter}>
