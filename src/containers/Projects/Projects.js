@@ -3,71 +3,9 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Project from "./Project/Project";
 import IsotopeResponseRenderer from "./IsotopeResponseRenderer/IsotopeResponseRenderer";
-import "./Project/Project.css";
-
-function shallowCompare(newObj, prevObj) {
-  for (let key in newObj) {
-    if (newObj[key] !== prevObj[key]) return true;
-  }
-  return false;
-}
-
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    return (images[item.replace("./", "")] = r(item));
-  });
-  return images;
-}
-
-const images = importAll(
-  require.context("../../assets/images/projects", false, /\.(png|jpe?g|svg)$/)
-);
-
-const myElements = [
-  {
-    source: `${images["project1.png"]}`,
-    alt: "alt1",
-    href: "https://www.google.com",
-    category: "installations",
-    height: "xl",
-  },
-  {
-    source: `${images["project2.jpg"]}`,
-    alt: "alt2",
-    href: "https://www.google.com",
-    category: "painting",
-    height: "xs",
-  },
-  {
-    source: `${images["project3.jpg"]}`,
-    alt: "alt3",
-    href: "https://www.google.com",
-    category: "illustration",
-    height: "s",
-  },
-  {
-    source: `${images["project4.jpg"]}`,
-    alt: "alt4",
-    href: "https://www.google.com",
-    category: "painting",
-    height: "m",
-  },
-  {
-    source: `${images["project5.jpg"]}`,
-    alt: "alt5",
-    href: "https://www.google.com",
-    category: "illustration",
-    height: "l",
-  },
-  {
-    source: `${images["project6.jpg"]}`,
-    alt: "alt6",
-    href: "https://www.google.com",
-    category: "installation",
-    height: "xs",
-  },
-];
+import { shallowCompare } from "../../utility";
+import classes from "./Projects.module.css";
+import { projects } from "./data";
 
 class Projects extends Component {
   state = {
@@ -83,29 +21,52 @@ class Projects extends Component {
     );
   }
   // You could do a method like this for every map render
-  renderElements(elements) {
-    return elements.map((e) => <Project key={e.alt} element={e}></Project>);
-  }
+  renderProjects = (projects) => {
+    return projects.map((project) => (
+      <Project key={project.alt} project={project}></Project>
+    ));
+  };
 
-  handleFiltering = (type) => {
+  handleFilter = (type) => {
     this.setState({ filter: type });
   };
 
   render() {
     return (
-      <div>
-        <h3>Filter All</h3>
-        <button onClick={() => this.handleFiltering("*")}>Filter</button>
-
-        <h3>Filter Illustrations</h3>
-        <button onClick={() => this.handleFiltering(".illustration")}>
-          Filter
-        </button>
-
-        <IsotopeResponseRenderer filter={this.state.filter}>
-          {this.renderElements(myElements)}
-        </IsotopeResponseRenderer>
-      </div>
+      <section id="projects" className={classes.Projects}>
+        <div className={classes.Container}>
+          <h1>Projects</h1>
+          <div className={classes.Filters}>
+            <button
+              className={classes.Button}
+              onClick={() => this.handleFilter("*")}
+            >
+              All
+            </button>
+            <button
+              className={classes.Button}
+              onClick={() => this.handleFilter(".Installation")}
+            >
+              Installations
+            </button>
+            <button
+              className={classes.Button}
+              onClick={() => this.handleFilter(".Illustration")}
+            >
+              Illustrations
+            </button>
+            <button
+              className={classes.Button}
+              onClick={() => this.handleFilter(".Painting")}
+            >
+              Paintings
+            </button>
+          </div>
+          <IsotopeResponseRenderer filter={this.state.filter}>
+            {this.renderProjects(projects)}
+          </IsotopeResponseRenderer>
+        </div>
+      </section>
     );
   }
 }

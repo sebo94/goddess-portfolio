@@ -13,21 +13,29 @@ const shallowCompare = (newObj, prevObj) => {
   return false;
 };
 
-const assignHeight = (height) => {
+const assignHeight = (height, classes) => {
   switch (height) {
     case "xs":
-      return "element-item-xs";
-    case "x":
-      return "element-item-s";
+      return classes.Small;
+    case "s":
+      return classes.XSmall;
     case "m":
-      return "element-item-m";
+      return classes.Medium;
     case "l":
-      return "element-item-l";
+      return classes.Large;
     case "xl":
-      return "element-item-xl";
+      return classes.XLarge;
     default:
       return;
   }
 };
 
-export { arraysEqual, shallowCompare, assignHeight };
+const importAllImages = (r) => {
+  let images = {};
+  r.keys().map((item, index) => {
+    return (images[item.replace("./", "")] = r(item));
+  });
+  return images;
+};
+
+export { arraysEqual, shallowCompare, assignHeight, importAllImages };

@@ -1,21 +1,24 @@
 import React, { Component } from "react";
-import "./Project.css";
-import {shallowCompare, assignHeight} from '../../../utility';
+import classes from "./Project.module.css";
+import { shallowCompare, assignHeight } from "../../../utility";
 
 class Project extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return !shallowCompare(this.props, nextProps);
   }
   render() {
-    const primaryClass = assignHeight(this.props.element.height); 
-    
+    const size = assignHeight(this.props.project.height, classes);
     return (
       <div
-        id={this.props.element.alt}
-        className={`element-item ${primaryClass} ${this.props.element.category}`}
-        data-category={this.props.element.category}
+        id={this.props.project.alt}
+        className={`${classes.Project} ${size} ${this.props.project.category}`}
+        data-category={this.props.project.category}
       >
-        <img src={this.props.element.source} alt={this.props.element.alt} />
+        <img
+          src={this.props.project.source}
+          alt={this.props.project.alt}
+          className={classes.Image}
+        />
       </div>
     );
   }

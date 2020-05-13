@@ -1,0 +1,47 @@
+.Isotope {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Isotope::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.Project {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 150px;
+  margin: 5px;
+  padding: 10px;
+  background: #ccc;
+}
+
+.XSmall {
+  height: 140px;
+}
+.Small {
+  height: 180px;
+}
+.Medium {
+  height: 220px;
+}
+.Large {
+  height: 260px;
+}
+.XLarge {
+  height: 300px;
+}
+
+.Sizer {
+  width: 10%;
+}
+
+.Image {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+

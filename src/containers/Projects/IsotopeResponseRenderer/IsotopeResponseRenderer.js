@@ -1,22 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Isotope from "isotope-layout";
-import "../Project/Project.css";
-
-function arraysEqual(arr1, arr2) {
-  if (arr1.length !== arr2.length) return false;
-  for (var i = arr1.length; i--; ) {
-    if (arr1[i] !== arr2[i]) return false;
-  }
-  return true;
-}
-
-function shallowCompare(newObj, prevObj) {
-  for (let key in newObj) {
-    if (newObj[key] !== prevObj[key]) return true;
-  }
-  return false;
-}
+import classes from "../Project/Project.module.css";
+import { arraysEqual, shallowCompare } from "../../../utility";
 
 class IsotopeResponseRenderer extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
@@ -33,17 +19,17 @@ class IsotopeResponseRenderer extends React.Component {
       });
     }
   }
+
   componentDidMount() {
     this.isoOptions = {
-      itemSelector: ".element-item",
+      itemSelector: `.${classes.Project}`,
       layoutMode: "masonry",
       masonry: {
-        columnWidth: ".element-item-sizer",
+        columnWidth: `.${classes.Sizer}`,
       },
     };
     this.createIsotopeContainer();
 
-    // Only arrange if there are elements to arrange
     if (this.props.children.length > 0 && this.iso != null) {
       this.iso.arrange();
     }
@@ -63,10 +49,11 @@ class IsotopeResponseRenderer extends React.Component {
       );
     }
   }
+
   render() {
     return (
-      <div className="isotope" ref="isotopeContainer">
-        <div className="element-item-sizer"></div>
+      <div className={classes.Isotope} ref="isotopeContainer">
+        <div className={classes.Sizer}></div>
         {this.props.children}
       </div>
     );
