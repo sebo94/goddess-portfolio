@@ -18,9 +18,8 @@
 6. Find a way to track who's sharing the projects
 7. Hover effect on the grid
 8. Animations on grid
-9. Number animations on about component
-10. Add routing for projects and services 
-11. Back to Top Button
+9. Add routing for projects and services 
+10. Back to Top Button
 
 ## Inspirations
 1. https://colorlib.com/preview/#niko
