@@ -1,7 +1,8 @@
-.Slide {
-    
-}
-
-.Title {
-
+.Carousel {
+  height: 300px;
+  padding: 25px;
+  margin: 0 auto;
+  border: solid 2px #99896e;
+  position: relative;
+  box-sizing: border-box;
 }

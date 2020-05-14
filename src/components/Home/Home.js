@@ -1,7 +1,5 @@
 import React from "react";
 import { Parallax } from "react-parallax";
-
-import Aos from "aos";
 import "aos/dist/aos.css";
 
 function importAll(r) {

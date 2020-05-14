@@ -16,9 +16,9 @@ const shallowCompare = (newObj, prevObj) => {
 const assignHeight = (height, classes) => {
   switch (height) {
     case "xs":
-      return classes.Small;
-    case "s":
       return classes.XSmall;
+    case "s":
+      return classes.Small;
     case "m":
       return classes.Medium;
     case "l":

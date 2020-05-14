@@ -1,4 +1,8 @@
-.About {
+.Services {
+  background-color: #f8f9fa;
+}
+
+.Container {
   max-width: 1170px;
   padding: 120px 15px;
   margin: 0 auto;
@@ -18,32 +22,35 @@
 .ContentBox {
   position: relative;
   z-index: 10;
-  margin-right: -75px;
+  margin-left: -75px;
   padding: 15px;
 }
 
 .ContentBoxInner {
-  padding: 25px 20px 25px 15px;
-  background-color: white;
+  padding: 25px 15px 25px 20px;
+  background-color: #f8f9fa;
+}
+
+.Counters {
+  margin-left: 100px;
+  padding-left: 100px;
 }
 
 .Title {
   margin-top: 0;
   margin-bottom: 25px;
+  margin-left: 40px;
   font-size: 36px;
   line-height: 1.3;
-}
-
-.Description {
-  margin: 0 0 15px;
-  line-height: 2.1;
-  font-weight: 300;
-  color: #6b6b74;
-  padding-bottom: 50px;
 }
 
 .Image {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.Cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

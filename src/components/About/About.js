@@ -1,8 +1,8 @@
 import React from "react";
+import Counters from "../Counters/Counters";
+import Carousel from '../Carousel/Carousel';
 import classes from "./About.module.css";
 import imgSrc from "../../assets/images/projects/project2.jpg";
-
-import Aos from "aos";
 import "aos/dist/aos.css";
 
 const about = (props) => (
@@ -28,20 +28,8 @@ const about = (props) => (
             pretium vehicula ipsum. Class aptent taciti sociosqu ad litora
             torquent per conubia nostra, per inceptos himenaeos.
           </p>
-          <div className={classes.Counters}>
-            <div className={classes.CounterBox}>
-              <span className={classes.Counter}>100</span>
-              <h5 className={classes.CounterTitle}>Years of experience</h5>
-            </div>
-            <div className={classes.CounterBox}>
-              <span className={classes.Counter}>100</span>
-              <h5 className={classes.CounterTitle}>Happy Clients</h5>
-            </div>
-            <div className={classes.CounterBox}>
-              <span className={classes.Counter}>100</span>
-              <h5 className={classes.CounterTitle}>Projects Completed</h5>
-            </div>
-          </div>
+          <Counters />
+          <Carousel />
         </div>
       </div>
     </div>

@@ -1,24 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
 import Slider from "infinite-react-carousel";
-import classes from './Carousel.module.css';
+import Testimonial from "../Testimonial/Testimonial";
+import classes from "./Carousel.module.css";
+import testimonialsData from "./data";
 
-const carousel = (props) => {
-  const settings = {};
-  return (
-    <div style={{ height: "200px", width: "200px", backgroundColor: '#ccc' }}>
-      <Slider {...settings}>
-        <div>
-          <h1>1</h1>
-        </div>
-        <div>
-          <h1>2</h1>
-        </div>
-        <div>
-          <h1>3</h1>
-        </div>
-      </Slider>
-    </div>
-  );
-};
+class Carousel extends Component {
+  componentDidMount() {
+    window.addEventListener("DOMContentLoaded", () => {
+      const dots = document.querySelector(".carousel-dots");
+      dots.style.position = "relative";
+      dots.style.left = "200px";
+      dots.style.bottom = "80px";
+    });
+  }
+  render() {
+    const settings = { autoplay: true, dots: true, arrows: false };
+    const testimonials = testimonialsData.map((testimonial) => (
+      <Testimonial
+        key={testimonial.imgAlt}
+        description={testimonial.description}
+        imgSrc={testimonial.imgSrc}
+        name={testimonial.name}
+        title={testimonial.title}
+      />
+    ));
+    return (
+      <div className={classes.Carousel}>
+        <Slider {...settings}>{testimonials}</Slider>
+      </div>
+    );
+  }
+}
 
-export default carousel;
+export default Carousel;

@@ -6,6 +6,7 @@ import Layout from "./hoc/Layout/Layout";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./containers/Projects/Projects";
+import Services from "./components/Services/Services";
 
 class App extends Component {
   // state = {
@@ -33,8 +34,9 @@ class App extends Component {
     return (
       <Layout>
         <Home />
-        <About />
         <Projects />
+        <About />
+        <Services />
       </Layout>
     );
   }

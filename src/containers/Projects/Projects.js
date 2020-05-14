@@ -34,28 +34,49 @@ class Projects extends Component {
   render() {
     return (
       <section id="projects" className={classes.Projects}>
-        <div className={classes.Container}>
-          <h1>Projects</h1>
+        <div
+          className={classes.Container}
+          data-aos="fade-right"
+          data-aos-delay="200"
+          data-aos-duration="500"
+          data-aos-easing="ease-in"
+        >
           <div className={classes.Filters}>
             <button
+              data-aos="zoom-in"
+              data-aos-delay="500"
+              data-aos-duration="500"
+              data-aos-easing="ease-in"
               className={classes.Button}
               onClick={() => this.handleFilter("*")}
             >
               All
             </button>
             <button
+              data-aos="zoom-in"
+              data-aos-delay="600"
+              data-aos-duration="500"
+              data-aos-easing="ease-in"
               className={classes.Button}
               onClick={() => this.handleFilter(".Installation")}
             >
               Installations
             </button>
             <button
+              data-aos="zoom-in"
+              data-aos-delay="700"
+              data-aos-duration="500"
+              data-aos-easing="ease-in"
               className={classes.Button}
               onClick={() => this.handleFilter(".Illustration")}
             >
               Illustrations
             </button>
             <button
+              data-aos="zoom-in"
+              data-aos-delay="800"
+              data-aos-duration="500"
+              data-aos-easing="ease-in"
               className={classes.Button}
               onClick={() => this.handleFilter(".Painting")}
             >

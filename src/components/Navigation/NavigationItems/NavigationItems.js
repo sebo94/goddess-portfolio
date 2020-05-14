@@ -7,7 +7,7 @@ const navigationItems = (props) => {
   return (
     <ul className={classes.NavigationItems}>
       {links.map((link) => {
-        return <NavigationItem>{link}</NavigationItem>;
+        return <NavigationItem key={link}>{link}</NavigationItem>;
       })}
     </ul>
   );
