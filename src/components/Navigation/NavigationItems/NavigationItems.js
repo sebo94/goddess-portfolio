@@ -3,7 +3,7 @@ import classes from "./NavigationItems.module.css";
 import NavigationItem from "./NavigationItem/NavigationItem";
 
 const navigationItems = (props) => {
-  const links = ["home", "about", "projects", "services", "contact"];
+  const links = ["home", "projects", "about", "services", "contact"];
   return (
     <ul className={classes.NavigationItems}>
       {links.map((link) => {

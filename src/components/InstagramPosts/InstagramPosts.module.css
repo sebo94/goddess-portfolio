@@ -1,0 +1,62 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.InstagramPost img {
+  display: block;
+  max-width: 100%;
+}
+
+.InstagramPost {
+  display: block;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 100vw;
+  width: 25%;
+  height: 100vh;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: width 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: -1;
+}
+
+.InstagramPost::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  background-color: rgba(34, 34, 34, 0.5);
+  transition: 0.5s ease-in-out;
+}
+
+.WillInactive {
+  width: 23vw;
+}
+
+.WillActive {
+  width: 31vw;
+}
+
+.WillActive {
+  opacity: 0.75;
+}
+
+.IsInactive {
+  width: 0;
+}
+
+.IsActive {
+  width: 100vw;
+}
+
+.IsActive::after {
+  opacity: 0;
+}
