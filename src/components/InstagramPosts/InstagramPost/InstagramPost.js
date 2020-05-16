@@ -1,16 +1,24 @@
 import React from "react";
-import imgSrc from "../../../assets/images/projects/project2.jpg";
+import imgSrc from '../../../assets/images/projects/project2.jpg';
 
 const instagramPost = (props) => {
   return (
+    // <div
+    //   id={props.id}
+    //   onClick={() => props.click(props.id)}
+    //   onMouseEnter={() => props.hover(props.id)}
+    //   className={props.classList}
+    // >
+    //   <img alt="fuck you" src={props.imgUrl}/>
+    // </div>
     <div
       id={props.id}
       onClick={() => props.click(props.id)}
-      onMouseEnter={() => props.hoverEnter(props.id)}
-      onMouseLeave={() => props.hoverExit(props.id)}
-      className={props.class}
+      onMouseEnter={() => props.hover(props.id)}
+      className={props.classList}
       style={{ backgroundImage: `url(${imgSrc})` }}
-    ></div>
+    >
+    </div>
   );
 };
 export default instagramPost;
