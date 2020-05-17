@@ -6,6 +6,8 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./containers/Projects/Projects";
 import Services from "./components/Services/Services";
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 import InstagramPosts from './components/InstagramPosts/InstagramPosts';
 
 class App extends Component {
@@ -37,7 +39,9 @@ class App extends Component {
         <Projects />
         <About />
         <Services />
+        <Contact />
         <InstagramPosts />
+        <Footer />
       </Layout>
     );
   }

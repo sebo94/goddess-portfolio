@@ -1,6 +1,6 @@
 ## Optimizations
 
-1. Change libraries to smaller ones based on needs (parallax, infinite carousel, aos(alternative: scroll out), Colcade(can use pure css))
+1. Change libraries to smaller ones based on needs (parallax, infinite carousel, aos(alternative: scroll out), Isotope(can use pure css))
 2. Image optimizations (quality, sizes, metatags, cdns)
 3. Lazy loading components
 4. Refactor code/data files
@@ -12,14 +12,16 @@
 
 1. Opacity on scroll?
 2. Rework layout component structure (or remove it entirely)
-3. Latest post instagram
-4. Share my projects on socials
-5. Navbar animation
-6. Find a way to track who's sharing the projects
-7. Hover effect on the grid
+3. Share my projects on socials
+4. Navbar animation
+5. Find a way to track who's sharing the projects
+6. Add routing for projects and services
+7. Hover effect on the grid and the instagram posts
 8. Animations on grid
-9. Add routing for projects and services
-10. Back to Top Button
+9. Make components for skills and footer
+10. Back to home button appears only after scrolling past home 
+11. Integrate a spinner for loadings
+12. Export button component
 
 ## Inspirations
 

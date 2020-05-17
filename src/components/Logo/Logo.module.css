@@ -2,6 +2,7 @@
   padding: 15px;
   box-sizing: border-box;
   height: 100%;
+  cursor: pointer;
 }
 
 .Logo img {

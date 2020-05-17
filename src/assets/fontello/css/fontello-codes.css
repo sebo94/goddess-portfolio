@@ -4,6 +4,10 @@
 .icon-adult:before { content: '\e802'; } /* '' */
 .icon-palette:before { content: '\e803'; } /* '' */
 .icon-wrench:before { content: '\e804'; } /* '' */
+.icon-up-big:before { content: '\e805'; } /* '' */
+.icon-location:before { content: '\e806'; } /* '' */
+.icon-phone:before { content: '\e807'; } /* '' */
+.icon-mail:before { content: '\e808'; } /* '' */
 .icon-brush:before { content: '\f1fc'; } /* '' */
 .icon-twitter:before { content: '\f309'; } /* '' */
 .icon-facebook:before { content: '\f30c'; } /* '' */

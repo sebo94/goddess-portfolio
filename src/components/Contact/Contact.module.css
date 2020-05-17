@@ -1,0 +1,49 @@
+.Contact {
+  max-width: 1170px;
+  padding: 120px 15px;
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.Column {
+  flex: 0 0 50%;
+}
+
+.Content {
+  padding: 50px 0;
+  position: relative;
+}
+
+.ContentBox {
+  position: relative;
+  z-index: 10;
+  margin-right: -75px;
+  padding: 15px;
+}
+
+.ContentBoxInner {
+  padding: 25px 20px 25px 15px;
+  background-color: white;
+}
+
+.Title {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+/* .Description {
+  margin: 0 0 15px;
+  line-height: 2.1;
+  font-weight: 300;
+  color: #6b6b74;
+  padding-bottom: 50px;
+} */
+
+.Image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

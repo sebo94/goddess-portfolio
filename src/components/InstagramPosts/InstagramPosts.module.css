@@ -14,9 +14,8 @@
   position: relative;
   float: left;
   overflow: hidden;
-  width: 100vw;
   width: 23vw;
-  height: 100vh;
+  height: 50vh;
   cursor: pointer;
   background-size: cover;
   background-position: center center;

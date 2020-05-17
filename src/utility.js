@@ -38,4 +38,22 @@ const importAllImages = (r) => {
   return images;
 };
 
-export { arraysEqual, shallowCompare, assignHeight, importAllImages };
+const createFormElement = (elType, type, placeholder, value, validation) => ({
+  elType,
+  elementConfig: {
+    type,
+    placeholder,
+  },
+  value,
+  validation,
+  valid: false,
+  touched: false,
+});
+
+export {
+  arraysEqual,
+  shallowCompare,
+  assignHeight,
+  importAllImages,
+  createFormElement,
+};

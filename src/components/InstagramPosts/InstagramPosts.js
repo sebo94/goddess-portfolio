@@ -1,64 +1,50 @@
 import React, { Component } from "react";
 import InstagramPost from "./InstagramPost/InstagramPost";
 import classes from "./InstagramPosts.module.css";
-import imgSrc from '../../assets/images/projects/project2.jpg';
-
-const initialPosts = [
-  {
-    id: "1",
-    classList: [classes.InstagramPost],
-    caption: "",
-    imgUrl: imgSrc,
-  },
-  {
-    id: "2",
-    classList: [classes.InstagramPost],
-    caption: "",
-    imgUrl: imgSrc,
-  },
-  {
-    id: "3",
-    classList: [classes.InstagramPost],
-    caption: "",
-    imgUrl: imgSrc,
-  },
-  {
-    id: "4",
-    classList: [classes.InstagramPost],
-    caption: "",
-    imgUrl: imgSrc,
-  },
-];
 
 class InstagramPosts extends Component {
   state = {
-    posts: initialPosts,
+    posts: null,
+    variable: true,
   };
 
-  // componentDidMount() {
-  //   // basic display api is read only so it should not be a problem keeping it in the client
-  //   const accessToken =
-  //     "IGQVJXQXZAxWDlSckNUTjBDdG9TbERfb2VGaE13U3RybzI3aHJjR2xLSllXTHhGUEgzSUI2MVpyVjZApUmw4MkdvWXViaUZArdURsSTVzakduZA3V4WlBLbU03ZAHh0V2tpeHFYUzJyelB5aDRQWm5QUklSZAQZDZD";
-  //   fetch(
-  //     `https://graph.instagram.com/me/media?fields=id,media_url,caption&access_token=${accessToken}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       // Set the state
-  //       const data = result.data.slice(4, 8);
-  //       // ... We only want to render images so weh might wanna request the media type as well and filter the images only
-  //       // Create the array we need
-  //       const posts = data.map((post) => {
-  //         return {
-  //           id: post.id,
-  //           imgUrl: post.media_url,
-  //           caption: post.caption,
-  //           classList: [classes.InstagramPost],
-  //         };
-  //       });
-  //       this.setState({ posts });
-  //     });
-  // }
+  componentDidMount() {
+    // basic display api is read only so it should not be a problem keeping it in the client
+    let accessToken =
+      "IGQVJXQXZAxWDlSckNUTjBDdG9TbERfb2VGaE13U3RybzI3aHJjR2xLSllXTHhGUEgzSUI2MVpyVjZApUmw4MkdvWXViaUZArdURsSTVzakduZA3V4WlBLbU03ZAHh0V2tpeHFYUzJyelB5aDRQWm5QUklSZAQZDZD";
+    fetch(
+      `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${accessToken}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        accessToken =
+          data.expires_in > 5000000 ? accessToken : data.access_token;
+      });
+    fetch(
+      `https://graph.instagram.com/me/media?fields=id,media_url,caption&access_token=${accessToken}`
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        // Set the state
+        const data = result.data.slice(4, 8);
+        // ... We only want to render images so weh might wanna request the media type as well and filter the images only
+        // Create the array we need
+        const posts = data.map((post, index) => {
+          const classList =
+            index === 0
+              ? [classes.InstagramPost, classes.WillActive]
+              : [classes.InstagramPost];
+          return {
+            id: post.id,
+            imgUrl: post.media_url,
+            caption: post.caption,
+            classList,
+            placement: index,
+          };
+        });
+        this.setState({ posts });
+      });
+  }
 
   handleClick = (postId) => {
     let newClasses,
@@ -97,48 +83,49 @@ class InstagramPosts extends Component {
     newOtherPosts.map((post) => (post.classList = newOtherClasses));
 
     // Insert the newPost into the collection
-    newOtherPosts.splice(newPost.id - 1, 0, newPost);
+    newOtherPosts.splice(newPost.placement, 0, newPost);
 
     this.setState({ posts: newOtherPosts });
   };
 
   handleHover = (postId) => {
-    console.log("handling hover")
-    // Do something on hover enter
-    let newClasses,
-      newOtherClasses = [];
-    const hoveredPost = this.state.posts.filter(
-      (post) => post.id === postId
-    )[0];
-    const otherPosts = this.state.posts.filter((post) => post.id !== postId);
+    if (this.state.variable) {
+      // Do something on hover enter
+      let newClasses,
+        newOtherClasses = [];
+      const hoveredPost = this.state.posts.filter(
+        (post) => post.id === postId
+      )[0];
+      const otherPosts = this.state.posts.filter((post) => post.id !== postId);
 
-    // Remove "WillActive" and "WillInactive" from all the other posts
-    newOtherClasses = otherPosts.map((post) =>
-      post.classList.filter(
-        (cls) => cls !== classes.WillActive && cls !== classes.WillInactive
-      )
-    )[0];
+      // Remove "WillActive" and "WillInactive" from all the other posts
+      newOtherClasses = otherPosts.map((post) =>
+        post.classList.filter(
+          (cls) => cls !== classes.WillActive && cls !== classes.WillInactive
+        )
+      )[0];
 
-    // Add "WillActive" to the hoveredPost
-    newClasses = hoveredPost.classList.concat(classes.WillActive);
+      // Add "WillActive" to the hoveredPost
+      newClasses = hoveredPost.classList.concat(classes.WillActive);
 
-    // Add "WillInactive to all the other posts"
-    newOtherClasses.concat(classes.WillInactive);
+      // Add "WillInactive to all the other posts"
+      newOtherClasses.concat(classes.WillInactive);
 
-    // Create the newPost object and the newOtherPost object
-    let newPost = { ...hoveredPost };
-    let newOtherPosts = [...otherPosts];
+      // Create the newPost object and the newOtherPost object
+      let newPost = { ...hoveredPost };
+      let newOtherPosts = [...otherPosts];
 
-    // Assign the new classList to the newPost
-    newPost.classList = newClasses;
+      // Assign the new classList to the newPost
+      newPost.classList = newClasses;
 
-    // Assign the new classList to every other post
-    newOtherPosts.map((post) => (post.classList = newOtherClasses));
+      // Assign the new classList to every other post
+      newOtherPosts.map((post) => (post.classList = newOtherClasses));
 
-    // Insert the newPost into the collection
-    newOtherPosts.splice(newPost.id - 1, 0, newPost);
+      // Insert the newPost into the collection
+      newOtherPosts.splice(newPost.placement, 0, newPost);
 
-    this.setState({ posts: newOtherPosts });
+      this.setState({ posts: newOtherPosts });
+    }
   };
 
   render() {
@@ -148,7 +135,7 @@ class InstagramPosts extends Component {
         <InstagramPost
           key={post.id}
           id={post.id}
-          // imgUrl={post.imgUrl}
+          imgUrl={post.imgUrl}
           classList={post.classList.join(" ")}
           click={this.handleClick}
           hover={this.handleHover}
