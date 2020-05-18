@@ -1,9 +1,10 @@
 import React from "react";
 import Counters from "../Counters/Counters";
-import Carousel from '../Carousel/Carousel';
+import Carousel from "../Carousel/Carousel";
 import classes from "./About.module.css";
 import imgSrc from "../../assets/images/projects/project2.jpg";
 import "aos/dist/aos.css";
+import { Parallax } from "react-parallax";
 
 const about = (props) => (
   <section
@@ -33,6 +34,13 @@ const about = (props) => (
         </div>
       </div>
     </div>
+    {/* <Parallax
+      bgImage={imgSrc}
+      strength={500}
+      className={[classes.Column, classes.Image].join(" ")}
+    >
+      <div style={{ height: "100vh" }}></div>
+    </Parallax> */}
     <div
       style={{ backgroundImage: `url(${imgSrc})` }}
       className={[classes.Column, classes.Image].join(" ")}

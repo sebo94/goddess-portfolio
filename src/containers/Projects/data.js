@@ -91,4 +91,47 @@ const projects = [
   },
 ];
 
-export { projects };
+const buttons = [
+  {
+    label: "All",
+    filter: "*",
+    animation: {
+      type: "fade-up",
+      delay: "0",
+      duration: "1000",
+      easing: "ease-in",
+    },
+  },
+  {
+    label: "Installations",
+    filter: ".Installation",
+    animation: {
+      type: "fade-up",
+      delay: "100",
+      duration: "1000",
+      easing: "ease-in",
+    },
+  },
+  {
+    label: "Illustrations",
+    filter: ".Illustration",
+    animation: {
+      type: "fade-up",
+      delay: "200",
+      duration: "1000",
+      easing: "ease-in",
+    },
+  },
+  {
+    label: "Paintings",
+    filter: ".Painting",
+    animation: {
+      type: "fade-up",
+      delay: "300",
+      duration: "1000",
+      easing: "ease-in",
+    },
+  },
+];
+
+export { projects, buttons };

@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Project from "./Project/Project";
+import Filters from "./Filters/Filters";
 import IsotopeResponseRenderer from "./IsotopeResponseRenderer/IsotopeResponseRenderer";
 import { shallowCompare } from "../../utility";
 import classes from "./Projects.module.css";
-import { projects } from "./data";
+import { projects, buttons } from "./data";
 
 class Projects extends Component {
   state = {
@@ -14,6 +15,7 @@ class Projects extends Component {
   componentDidMount() {
     Aos.init();
   }
+
   shouldComponentUpdate(nextProps, nextState) {
     return (
       !shallowCompare(this.props, nextProps) ||
@@ -36,53 +38,12 @@ class Projects extends Component {
       <section id="projects" className={classes.Projects}>
         <div
           className={classes.Container}
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-delay="200"
-          data-aos-duration="500"
-          data-aos-easing="ease-in"
+          data-aos-duration="1000"
+          data-aos-easing="ease"
         >
-          <div className={classes.Filters}>
-            <button
-              data-aos="zoom-in"
-              data-aos-delay="500"
-              data-aos-duration="500"
-              data-aos-easing="ease-in"
-              className={classes.Button}
-              onClick={() => this.handleFilter("*")}
-            >
-              All
-            </button>
-            <button
-              data-aos="zoom-in"
-              data-aos-delay="600"
-              data-aos-duration="500"
-              data-aos-easing="ease-in"
-              className={classes.Button}
-              onClick={() => this.handleFilter(".Installation")}
-            >
-              Installations
-            </button>
-            <button
-              data-aos="zoom-in"
-              data-aos-delay="700"
-              data-aos-duration="500"
-              data-aos-easing="ease-in"
-              className={classes.Button}
-              onClick={() => this.handleFilter(".Illustration")}
-            >
-              Illustrations
-            </button>
-            <button
-              data-aos="zoom-in"
-              data-aos-delay="800"
-              data-aos-duration="500"
-              data-aos-easing="ease-in"
-              className={classes.Button}
-              onClick={() => this.handleFilter(".Painting")}
-            >
-              Paintings
-            </button>
-          </div>
+          <Filters click={this.handleFilter} />
           <IsotopeResponseRenderer filter={this.state.filter}>
             {this.renderProjects(projects)}
           </IsotopeResponseRenderer>

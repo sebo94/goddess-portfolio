@@ -14,6 +14,7 @@ class Project extends Component {
         className={`${classes.Project} ${size} ${this.props.project.category}`}
         data-category={this.props.project.category}
       >
+        <span className={classes.Info}>Project Name</span>
         <img
           src={this.props.project.source}
           alt={this.props.project.alt}

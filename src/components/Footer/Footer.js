@@ -1,12 +1,22 @@
 import React from "react";
-import Follows from '../Follows/Follows';
+import Follow from "../Follow/Follow";
+import ContactInfos from "../ContactInfos/ContactInfos";
+import AboutMe from "../AboutMe/AboutMe";
 import classes from "./Footer.module.css";
 
-const footer = (props) => (
-  <footer id="footer" className={classes.Footer}>
-       <div className={classes.Container}>
-           <Follows />
-       </div>
+const footer = () => (
+  <footer
+    className={classes.Footer}
+    data-aos="fade"
+    data-aos-delay="200"
+    data-aos-duration="500"
+    data-aos-easing="ease-in"
+  >
+    <div className={classes.Container}>
+      <AboutMe />
+      <ContactInfos />
+      <Follow />
+    </div>
   </footer>
 );
 

@@ -1,7 +1,6 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+.InstagramPosts {
+  /* height: 50vh;
+  margin: 120px 0; */
 }
 
 .InstagramPost img {
@@ -15,7 +14,7 @@
   float: left;
   overflow: hidden;
   width: 23vw;
-  height: 50vh;
+  height: 100vh;
   cursor: pointer;
   background-size: cover;
   background-position: center center;

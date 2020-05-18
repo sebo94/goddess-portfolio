@@ -9,7 +9,7 @@ const services = (props) => {
     <section
       id="services"
       className={classes.Services}
-      data-aos="fade-left"
+      data-aos="fade-right"
       data-aos-delay="200"
       data-aos-duration="500"
       data-aos-easing="ease-in"

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Input from "../../components/Input/Input";
+import Button from "../../components/Button/Button";
 import classes from "./Form.module.css";
 import { createFormElement } from "../../utility";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 
 class Form extends Component {
   state = {
@@ -72,12 +73,15 @@ class Form extends Component {
     for (let formElementId in this.state.form) {
       templateParams[formElementId] = this.state.form[formElementId].value;
     }
+
+    console.log(process.env.REACT_APP_EMAILJS_USER_ID);
+
     // emailjs
     //   .send(
     //     "gmail",
     //     "template_6of93GCP",
     //     templateParams,
-    //     "user_823nB9E3cGDolmAA1uhkB"
+    //     process.env.REACT_APP_EMAILJS_USER_ID
     //   )
     //   .then(
     //     (response) => {
@@ -113,17 +117,13 @@ class Form extends Component {
             label={formElement.id}
           />
         ))}
-        <button btnType="Success" disabled={!this.state.formIsValid}>
+        <Button animation={{}} disabled={!this.state.formIsValid}>
           SEND
-        </button>
+        </Button>
       </form>
     );
 
-    return (
-      <div className={classes.Form}>
-        {form}
-      </div>
-    );
+    return <div className={classes.Form}>{form}</div>;
   }
 }
 

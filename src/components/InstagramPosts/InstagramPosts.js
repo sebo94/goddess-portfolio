@@ -143,7 +143,14 @@ class InstagramPosts extends Component {
       ));
     }
     return (
-      <section id="instagramPosts" className={classes.InstagramPosts}>
+      <section
+        id="instagramPosts"
+        className={classes.InstagramPosts}
+        data-aos="fade-up"
+        data-aos-delay="500"
+        data-aos-duration="800"
+        data-aos-easing="ease-in"
+      >
         <div className={classes.Container}>{igPosts}</div>
       </section>
     );

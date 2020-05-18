@@ -1,0 +1,13 @@
+.ContactInfos {
+  flex: 0 0 41.666667%;
+  padding: 0 15px;
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+
+.Title {
+  margin: 0;
+  color: #eee;
+  margin-bottom: 16px;
+  font-size: 24px;
+}

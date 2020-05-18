@@ -1,12 +1,11 @@
 .Footer {
-  background: #222;
-  color: white;
+  background: #000410;
 }
 
 .Container {
-  /* max-width: 1170px;
+  max-width: 1170px;
   padding: 120px 15px;
   margin: 0 auto;
   display: flex;
-  box-sizing: border-box; */
+  box-sizing: border-box;
 }
