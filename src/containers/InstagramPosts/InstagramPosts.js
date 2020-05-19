@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import InstagramPost from "./InstagramPost/InstagramPost";
 import classes from "./InstagramPosts.module.css";
 
-class InstagramPosts extends Component {
+class InstagramPosts extends PureComponent {
   state = {
     posts: null,
     variable: true,

@@ -2,23 +2,18 @@
 
 1. Change libraries to smaller ones based on needs (parallax (pure css/js), infinite carousel, aos(alternative: scroll out), Isotope(can use pure css))
 2. Image optimizations (quality, sizes, metatags, cdns)
-3. Lazy loading components
+3. Lazy loading optimization / webpack bundling
 4. Refactor code/data files
-5. Other devices versions
-6. Cross platform compatibility
-7. Integrate a spinner for loadings
+5. Rework layout component structure (or remove it entirely)
+6. Show only one spinner at the time
 
 ## Todos
 
-1. Opacity on scroll?
-2. Rework layout component structure (or remove it entirely)
-3. Share my projects on socials
-4. Navbar animation
-5. Find a way to track who's sharing the projects
-6. Add routing for projects and services
-7. Hover effect on grids
-8. Fix issues related to ig posts component
-9. Parallax on other images?
+1. Share my projects on socials
+2. Find a way to track who's sharing the projects
+3. Add routing for projects and services
+4. Other devices versions
+5. Cross platform compatibility
 
 ## Inspirations
 

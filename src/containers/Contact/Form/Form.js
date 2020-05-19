@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Input from "../../components/Input/Input";
-import Button from "../../components/Button/Button";
+import Input from "../../../components/Input/Input";
+import Button from "../../../components/Button/Button";
 import classes from "./Form.module.css";
-import { createFormElement } from "../../utility";
+import { createFormElement } from "../../../utility";
 import emailjs from "emailjs-com";
 
 class Form extends Component {

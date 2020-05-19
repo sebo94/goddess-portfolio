@@ -7,3 +7,10 @@
   display: flex;
   justify-content: space-around;
 }
+
+@media (max-width: 500px) {
+  .NavigationItems {
+    padding-left: 0;
+    flex-direction: column;
+  }
+}

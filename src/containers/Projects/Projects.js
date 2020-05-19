@@ -1,26 +1,18 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Project from "./Project/Project";
 import Filters from "./Filters/Filters";
 import IsotopeResponseRenderer from "./IsotopeResponseRenderer/IsotopeResponseRenderer";
-import { shallowCompare } from "../../utility";
 import classes from "./Projects.module.css";
-import { projects, buttons } from "./data";
+import { projects } from "./data";
 
-class Projects extends Component {
+class Projects extends PureComponent {
   state = {
     filter: "",
   };
   componentDidMount() {
     Aos.init();
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return (
-      !shallowCompare(this.props, nextProps) ||
-      !shallowCompare(this.state, nextState)
-    );
   }
   // You could do a method like this for every map render
   renderProjects = (projects) => {
