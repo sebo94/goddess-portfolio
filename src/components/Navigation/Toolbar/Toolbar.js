@@ -19,7 +19,7 @@ class Toolbar extends Component {
       <header style={{ opacity }} className={classNames}>
         <DrawerToggle clicked={this.props.drawerToggleClicked} />
         <Logo />
-        <nav className={classes.DesktopOnly} >
+        <nav className={classes.DesktopOnly}>
           <NavigationItems />
         </nav>
       </header>

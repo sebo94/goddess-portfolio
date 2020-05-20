@@ -1,7 +1,5 @@
 .Isotope {
   width: 100%;
-  margin: 0 auto;
-  padding-left: 100px;
 }
 
 .Isotope::after {
@@ -110,4 +108,82 @@
 
 .Sizer {
   width: 0px;
+}
+
+@media (min-width: 320px) {
+  .Isotope {
+    margin-left: calc(20vw + 1vw);
+  }
+}
+
+@media (min-width: 375px) {
+  .Isotope {
+    margin-left: calc(30vw + 1vw);
+  }
+}
+
+@media (min-width: 414px) {
+  .Isotope {
+    margin-left: calc(42vw + 1vw);
+  }
+}
+
+@media (min-width: 509px) {
+  .Isotope {
+    margin-left: calc(1vw + 1vw);
+  }
+}
+
+@media (min-width: 568px) {
+  .Isotope {
+    margin-left: calc(10vw + 1vw);
+  }
+}
+
+@media (min-width: 633px) {
+  .Isotope {
+    margin-left: calc(16vw + 1vw);
+  }
+}
+
+@media (min-width: 667px) {
+  .Isotope {
+    margin-left: calc(25vw + 1vw);
+  }
+}
+
+@media (min-width: 748px) {
+  .Isotope {
+    margin-left: calc(1vw + 1vw);
+  }
+}
+
+@media (min-width: 812px) {
+  .Isotope {
+    margin-left: calc(10vw + 1vw);
+  }
+}
+
+@media (min-width: 890px) {
+  .Isotope {
+    margin-left: calc(17vw + 1vw);
+  }
+}
+
+@media (min-width: 988px) {
+  .Isotope {
+    margin-left: calc(1vw + 1vw);
+  }
+}
+
+@media (min-width: 1024px) {
+  .Isotope {
+    margin-left: calc(3vw + 1vw);
+  }
+}
+
+@media (min-width: 1112px) {
+  .Isotope {
+    margin-left: calc(11vw + 1vw);
+  }
 }

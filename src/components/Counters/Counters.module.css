@@ -2,3 +2,9 @@
   display: flex;
   margin-bottom: 50px;
 }
+
+@media (max-width: 550px) {
+  .Counters {
+    flex-direction: column;
+  }
+}

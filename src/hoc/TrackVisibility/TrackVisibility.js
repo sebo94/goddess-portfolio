@@ -27,7 +27,7 @@ class TrackVisibility extends Component {
     }
   }
   render() {
-    return <div ref={this.ref}>{this.props.children}</div>;
+    return <div id={this.props.id} ref={this.ref}>{this.props.children}</div>;
   }
 }
 

@@ -9,3 +9,10 @@
   font-size: 14px;
   color: #777777;
 }
+
+@media (max-width: 568px) {
+  .Follow {
+    flex: 0 0 100%;
+    padding-left: 15px;
+  }
+}

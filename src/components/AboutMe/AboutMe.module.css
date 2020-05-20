@@ -15,3 +15,10 @@
   font-size: 14px;
   color: #777777;
 }
+
+@media (max-width: 568px) {
+  .AboutMe {
+    flex: 0 0 100%;
+    margin-bottom: 30px;
+  }
+}

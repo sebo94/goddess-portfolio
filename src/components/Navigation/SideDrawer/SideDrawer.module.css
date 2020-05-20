@@ -12,12 +12,6 @@
   transition: transform 300ms ease-out;
 }
 
-@media (min-width: 500px) {
-  .SideDrawer {
-    display: none;
-  }
-}
-
 .Open {
   transform: translateX(0);
 }
@@ -26,7 +20,8 @@
   transform: translateX(-100%);
 }
 
-.Logo {
-  height: 11%;
-  margin-bottom: 32px;
+@media (min-width: 500px) {
+  .SideDrawer {
+    display: none;
+  }
 }

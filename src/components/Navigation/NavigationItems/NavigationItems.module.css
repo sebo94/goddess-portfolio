@@ -2,7 +2,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  padding-left: 650px;
+  padding-left: 400px;
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -12,5 +12,19 @@
   .NavigationItems {
     padding-left: 0;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 812px) and (max-width: 1366px) {
+  .NavigationItems {
+    padding-right: 50px;
+    padding-left: 40px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 812px) {
+  .NavigationItems {
+    padding-right: 30px;
+    padding-left: 10px;
   }
 }

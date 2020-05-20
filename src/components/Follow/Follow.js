@@ -9,6 +9,7 @@ const follow = () => (
     data-aos-delay="800"
     data-aos-duration="800"
     data-aos-easing="ease-in"
+    className={classes.Follow}
   >
     <h1 className={classes.Title}>Follow Me</h1>
     <p className={classes.Text}>Let us be social</p>

@@ -9,3 +9,9 @@
   display: flex;
   box-sizing: border-box;
 }
+
+@media (max-width: 568px) {
+  .Container {
+    flex-direction: column;
+  }
+}
