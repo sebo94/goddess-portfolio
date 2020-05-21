@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 class Toolbar extends Component {
   state = { opacity: 0 };
   componentDidMount() {
-    this.setState({ opacity: 1 });
+    this.setState({ opacity: 0.9 });
   }
   render() {
     const opacity = this.state.opacity;

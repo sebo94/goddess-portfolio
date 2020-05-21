@@ -1,5 +1,5 @@
 .Toolbar {
-  height: 78px;
+  height: 60px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -14,7 +14,7 @@
 .Toolbar.Solid {
   background-color: #eff;
   box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
-  transition: all 600ms ease;
+  transition: opacity 600ms ease;
 }
 
 .Toolbar nav {
