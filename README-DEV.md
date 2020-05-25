@@ -13,6 +13,7 @@
 2. Find a way to track who's sharing the projects
 3. Add routing for projects and services
 4. Cross platform compatibility
+5. Fonts, colors, padding on the bar, no box theme, check contact privacy form, delete phone number, remove painting projects 
 
 ## Inspirations
 
