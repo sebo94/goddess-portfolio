@@ -9,11 +9,11 @@ import TrackVisibility from "./hoc/TrackVisibility/TrackVisibility";
 const Projects = React.lazy(() => import("./containers/Projects/Projects"));
 const About = React.lazy(() => import("./containers/About/About"));
 const Services = React.lazy(() => import("./containers/Services/Services"));
-const Contact = React.lazy(() => import("./containers/Contact/Contact"));
+// const Contact = React.lazy(() => import("./containers/Contact/Contact"));
 const Footer = React.lazy(() => import("./containers/Footer/Footer"));
-const InstagramPosts = React.lazy(() =>
-  import("./containers/InstagramPosts/InstagramPosts")
-);
+// const InstagramPosts = React.lazy(() =>
+//   import("./containers/InstagramPosts/InstagramPosts")
+// );
 
 class App extends Component {
   state = {
@@ -22,7 +22,7 @@ class App extends Component {
     projects: false,
     about: false,
     services: false,
-    contact: false,
+    contact: true,
     footer: false,
     posts: false,
   };
@@ -71,13 +71,13 @@ class App extends Component {
           </TrackVisibility>
         )}
 
-        {this.state.services && (
+        {/* {this.state.services && (
           <TrackVisibility onVisible={() => this.handleVisibility("contact")}>
             <Suspense fallback={<Spinner />}>
               <Contact />
             </Suspense>
           </TrackVisibility>
-        )}
+        )} */}
 
         {this.state.contact && (
           <TrackVisibility onVisible={() => this.handleVisibility("footer")}>
@@ -87,13 +87,13 @@ class App extends Component {
           </TrackVisibility>
         )}
 
-        {this.state.footer && (
+        {/* {this.state.footer && (
           <TrackVisibility onVisible={() => this.handleVisibility("posts")}>
             <Suspense fallback={<Spinner />}>
               <InstagramPosts />
             </Suspense>
           </TrackVisibility>
-        )}
+        )} */}
       </Layout>
     );
   }

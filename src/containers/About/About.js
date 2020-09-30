@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
-import Counters from "../../components/Counters/Counters";
-import Carousel from "../../components/Carousel/Carousel";
+// import Counters from "../../components/Counters/Counters";
+// import Carousel from "../../components/Carousel/Carousel";
 import classes from "./About.module.css";
 import imgSrc from "../../assets/images/projects/project2.jpg";
 import "aos/dist/aos.css";
@@ -30,8 +30,8 @@ class About extends PureComponent {
                 mauris non, pretium vehicula ipsum. Class aptent taciti sociosqu
                 ad litora torquent per conubia nostra, per inceptos himenaeos.
               </p>
-              <Counters />
-              <Carousel />
+              {/* <Counters /> */}
+              {/* <Carousel /> */}
             </div>
           </div>
         </div>

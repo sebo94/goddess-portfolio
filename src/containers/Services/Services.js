@@ -23,7 +23,7 @@ class Services extends PureComponent {
           <div className={[classes.Column, classes.Content].join(" ")}>
             <div className={classes.ContentBox}>
               <div className={classes.ContentBoxInner}>
-                <h3 className={classes.Title}>What i do</h3>
+                <h3 className={classes.Title}>What I do</h3>
                 <div className={classes.Cards}>
                   {servicesData.map((service) => {
                     return (

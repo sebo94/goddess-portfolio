@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./DrawerToggle.module.css";
 
 const drawerToggle = (props) => {
-  console.log(props)
   return (
     <div onClick={props.clicked} className={classes.DrawerToggle}>
       <div></div>

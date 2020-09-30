@@ -12,3 +12,9 @@
   color: #948a72;
   transition: color 50ms ease;
 }
+
+@media (max-width: 500px) {
+  .NavigationItem {
+    padding-top: 20px;
+  }
+}
